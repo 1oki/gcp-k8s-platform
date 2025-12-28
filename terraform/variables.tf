@@ -18,5 +18,5 @@ variable "cluster_name" {
 variable "env_name" {
   description = "Environment tag (e.g. prod, dev, spiral-c2)"
   type        = string
-  default     = "spiral-c2"       
+  default     = "spiral-c2"
 }

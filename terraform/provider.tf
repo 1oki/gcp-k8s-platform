@@ -10,13 +10,12 @@ terraform {
 
   # Настройка удаленного хранения стейта
   backend "gcs" {
-    bucket  = "tf-state-spiral-c2-iney"  # <--- ВСТАВЬ СЮДА ИМЯ ТВОЕГО БАКЕТА!
-    prefix  = "terraform/state"
-    # credentials здесь не указываем, передадим через ENV или авто-поиск
+    bucket = "tf-state-spiral-c2-iney"
+    prefix = "terraform/state"
   }
 }
 
 provider "google" {
-  project     = "dvps-spiral-c2" # <--- ВСТАВЬ СВОЙ PROJECT ID (не имя!)
-  region      = "asia-southeast1"
+  project = "dvps-spiral-c2"
+  region  = "asia-southeast1"
 }
