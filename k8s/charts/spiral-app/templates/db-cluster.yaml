@@ -8,11 +8,9 @@ spec:
   
   # Настройки хранения (пока без дисков, в памяти, как с Redis, для скорости)
   # В проде тут нужен storageClassName и размер
+  
   storage:
-    type: ephemeral  # <--- ВМЕСТО persistent volume claim
-    storageClass: "" # Очищаем класс
-  #storage:
-  #  size: 1Gi
+    size: 1Gi
   #  storageClass: standard # GKE default class
 
   # Автоматический bootstrap базы
