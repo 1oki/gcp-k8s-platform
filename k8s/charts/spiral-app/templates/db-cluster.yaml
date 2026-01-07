@@ -1,0 +1,28 @@
+# Это Custom Resource (CRD), который понимает оператор CNPG
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: {{ .Release.Name }}-db
+spec:
+  instances: 2 # Master + Standby (Репликация!)
+  
+  # Настройки хранения (пока без дисков, в памяти, как с Redis, для скорости)
+  # В проде тут нужен storageClassName и размер
+  storage:
+    size: 1Gi
+    storageClass: standard # GKE default class
+
+  # Автоматический bootstrap базы
+  bootstrap:
+    initdb:
+      database: app
+      owner: app
+
+  # Ресурсы (чтобы влезло на нашу ноду)
+  resources:
+    requests:
+      memory: "256Mi"
+      cpu: "100m"
+    limits:
+      memory: "512Mi"
+      cpu: "500m"

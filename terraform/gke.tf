@@ -1,6 +1,6 @@
 resource "google_container_cluster" "primary" {
   name     = "${var.env_name}-cluster"
-  location = "${var.region}-a" 
+  location = "${var.region}-b" 
 
   # We create the cluster without the default node pool. 
   # Best practice: manage node pools as separate resources to allow 

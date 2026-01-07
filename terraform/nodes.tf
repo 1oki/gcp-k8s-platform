@@ -7,7 +7,7 @@ resource "google_service_account" "kubernetes" {
 
 resource "google_container_node_pool" "primary_nodes" {
   name     = "${var.env_name}-node-pool"
-  location   = "${var.region}-a"
+  location   = "${var.region}-b"
   cluster  = google_container_cluster.primary.name
 
   # Initial node count per zone.
