@@ -161,18 +161,3 @@ tolerations: []
 
 affinity: {}
 
-redis:
-  fullnameOverride: redis
-  auth:
-    enabled: false 
-  architecture: standalone
-  master:
-    persistence:
-      enabled: false
-    resources:
-      requests:
-        cpu: 10m    # 0.01 ядра (очень мало)
-        memory: 32Mi
-      limits:
-        cpu: 100m
-        memory: 128Mi
