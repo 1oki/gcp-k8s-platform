@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spiral-app
+  namespace: argocd
+spec:
+  project: default
+  
+  # Откуда брать код?
+  source:
+    repoURL: https://github.com/sergei-v-filippov/gcp-k8s-platform.git
+    targetRevision: main
+    path: k8s/charts/spiral-app # Путь к твоему чарту внутри репо
+    
+    # Можно переопределять values прямо здесь (как helm install --set)
+    # helm:
+    #   values: |
+    #     replicaCount: 2
+
+  # Куда деплоить?
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  # Политика синхронизации
+  syncPolicy:
+    automated:
+      prune: true      # Удалять ресурсы, которых нет в гите
+      selfHeal: true   # Восстанавливать, если кто-то удалил ресурс руками (kubectl delete)
+    syncOptions:
+      - CreateNamespace=true
