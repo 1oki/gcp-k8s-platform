@@ -16,6 +16,6 @@ terraform {
 }
 
 provider "google" {
-  project = "dvps-spiral-c2"
-  region  = "asia-southeast1"
+  project = var.project_id
+  region  = var.region
 }

@@ -20,7 +20,7 @@ resource "google_container_node_pool" "primary_nodes" {
 
     # e2-medium (2 vCPU, 4GB RAM) is the minimum recommended for GKE 
     # to run system pods + workloads.
-    machine_type = "e2-medium"
+    machine_type = "e2-standard-2"
 
     service_account = google_service_account.kubernetes.email
     oauth_scopes = [
