@@ -55,3 +55,8 @@ def hello():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
+
+@app.before_request
+def log_request_info():
+    app.logger.info(f"User-Agent: {request.headers.get('User-Agent')}")
