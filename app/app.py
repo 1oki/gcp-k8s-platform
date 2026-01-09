@@ -5,6 +5,11 @@ from flask import Flask
 
 app = Flask(__name__)
 
+
+@app.before_request
+def log_request_info():
+    app.logger.info(f"User-Agent: {request.headers.get('User-Agent')}")
+
 def get_db_connection():
     # Данные для подключения берем из переменных окружения (их даст Оператор)
     conn = psycopg2.connect(
@@ -56,7 +61,3 @@ def hello():
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 
-
-@app.before_request
-def log_request_info():
-    app.logger.info(f"User-Agent: {request.headers.get('User-Agent')}")
