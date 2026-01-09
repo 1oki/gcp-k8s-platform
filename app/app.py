@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.before_request
 def log_request_info():
-    app.logger.info(f"User-Agent: {request.headers.get('User-Agent')}")
+    print(f"User-Agent: {request.headers.get('User-Agent')}", flush=True)
 
 def get_db_connection():
     # Данные для подключения берем из переменных окружения (их даст Оператор)
