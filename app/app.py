@@ -5,10 +5,10 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-
 @app.before_request
 def log_request_info():
     print(f"User-Agent: {request.headers.get('User-Agent')}", flush=True)
+    # force update v2
 
 def get_db_connection():
     # Данные для подключения берем из переменных окружения (их даст Оператор)
