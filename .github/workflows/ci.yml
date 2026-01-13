@@ -28,4 +28,6 @@ jobs:
         with:
           context: ./app  # <--- ВАЖНО: папка app
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/spiral-app:v-fix
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/spiral-app:latest
+            ${{ secrets.DOCKER_USERNAME }}/spiral-app:${{ github.sha }}
