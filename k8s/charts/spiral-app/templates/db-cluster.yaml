@@ -10,7 +10,7 @@ spec:
   # В проде тут нужен storageClassName и размер
   
   storage:
-    size: 1Gi
+    size: 2Gi
   #  storageClass: standard # GKE default class
 
   # Автоматический bootstrap базы

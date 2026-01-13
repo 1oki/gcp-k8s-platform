@@ -1,0 +1,7 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Backup
+metadata:
+  name: backup-test-01
+spec:
+  cluster:
+    name: spiral-app-db
