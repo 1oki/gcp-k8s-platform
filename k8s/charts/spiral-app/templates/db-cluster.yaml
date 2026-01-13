@@ -31,7 +31,7 @@ spec:
 
   backup:
     barmanObjectStore:
-      destinationPath: gs://spiral-db-backups-iney/  # <-- ТВОЙ БАКЕТ!
+      destinationPath: gs://spiral-db-backups-spiral-c2/  # <-- ТВОЙ БАКЕТ!
       googleCredentials:
         gkeEnvironment: true # Использовать Workload Identity
       wal:
