@@ -15,9 +15,11 @@ spec:
 
   # Автоматический bootstrap базы
   bootstrap:
-    initdb:
-      database: app
-      owner: app
+    #initdb:
+    #  database: app
+    #  owner: app
+    recovery:
+      source: spiral-app-db
 
   # Ресурсы (чтобы влезло на нашу ноду)
   resources:

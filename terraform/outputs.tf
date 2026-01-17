@@ -14,3 +14,8 @@ output "region" {
   value       = var.region
   description = "GCP Region"
 }
+
+output "backup_service_account_email" {
+  description = "Email of the Postgres Backup Service Account"
+  value       = google_service_account.postgres_backup.email
+}
