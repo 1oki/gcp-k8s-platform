@@ -1,4 +1,3 @@
-```markdown
 # ☁️ GCP Cloud-Native Platform
 
 ![Terraform](https://img.shields.io/badge/Terraform-1.9+-623CE4?style=flat&logo=terraform)
@@ -120,4 +119,3 @@ This repository includes a comprehensive guide to bootstrapping the entire platf
 
 ---
 *Created by Sergei Filippov*
-```
